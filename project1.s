@@ -98,42 +98,6 @@ convert:
 				#the number of elements eliminated from the original string should be displayed
 
 
-median:
-	#sort the array
-
-	#get the size of the array (load size into s0)
-	#size of halfword(2 -- load into s4?)
-	#compute size of array on stack(s4*s0) (2 (size of halfword) * size of array) (store in s4)
-	#allow space for array dimension (add another spot to store size -- 2) (add 2 to s4)
-	#move the stack pointer (room for stack and size) (s4*s0 +2)
-						#sub $sp, $sp, $s4
-	#put the size onto the stack (sw $s0, $sp)
-	#get pointer to the top of the stack
-	#get pointer to the first array element
-	#count array elements as they are copied (t0=0)
-
-	#loop:
-	#if t0 = the size of the array (s0) then branch to done (beq)
-	#go to next element (pointer to the top of the stack + 2)
-	#put element onto stack
-	#go to next item in array
-	#branch back through loop
-
-	#get size of array
-	#get address of the beginning of the array
-	#sort the elements on the stack
-	#array size / 2 -- get remainder (check whether size was even or odd)
-	
-	#odd:
-	#median is middle element of the array
-
-	#even:
-	#median is average of two elements
-	#put median onto stack for caller
-	#put stack pointer back (move $sp, $fp)
-	#return to caller (jr $ra)
-
-
 mean:
 
 
